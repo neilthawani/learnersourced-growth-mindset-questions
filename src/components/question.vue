@@ -1,6 +1,6 @@
 <template>
-    <label class="question">
-        <div class="form-group my-4">
+    <div class="question">
+        <div id="question" class="form-group my-4">
             <div class="row justify-content-center my-1">
                 <div class="col-10">
                     <strong>{{title}}</strong>
@@ -14,7 +14,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + a" value="optionA">
+                        <input class="form-check-input" type="radio" :name="title" :id="title + a" value="A">
                         <label class="form-check-label" :for="title + a">
                             A. {{a}}
                         </label>
@@ -24,7 +24,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + b" value="optionB">
+                        <input class="form-check-input" type="radio" :name="title" :id="title + b" value="B">
                         <label class="form-check-label" :for="title + b">
                             B. {{b}}
                         </label>
@@ -34,7 +34,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + c" value="optionC">
+                        <input class="form-check-input" type="radio" :name="title" :id="title + c" value="C">
                         <label class="form-check-label" :for="title + c">
                             C. {{c}}
                         </label>
@@ -44,7 +44,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + d" value="optionD">
+                        <input class="form-check-input" type="radio" :name="title" :id="title + d" value="D">
                         <label class="form-check-label" :for="title + d">
                             D. {{d}}
                         </label>
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </label>
+    </div>
 </template>
 
 <script>
@@ -60,7 +60,7 @@
     export default {
         name: "question",
         props:{
-
+            titleNum: Number,
             text: String,
             a: String,
             b: String,
@@ -71,7 +71,6 @@
         data: function () {
             return {
                 isTesting: true,
-                titleNum: 1,
             }
         },
         computed:{
