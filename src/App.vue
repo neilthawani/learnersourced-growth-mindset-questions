@@ -196,7 +196,8 @@
                         else if(json.Answer_text[key] == this.q_answers[i][2])
                             answers[i] = "C. " + answers[i];
                         else if(json.Answer_text[key] == this.q_answers[i][3])
-                            answers[i] = "D. " + answers[i];
+                            answers[i] =
+                                "D. " + answers[i];
                         console.log(answers[this.q_n-1]);
                         }
                     }
