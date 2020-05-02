@@ -66,7 +66,7 @@
             b: String,
             c: String,
             d: String,
-            feedback: String,
+            feedback: Array,
         },
         data: function () {
             return {

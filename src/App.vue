@@ -104,6 +104,7 @@
             // console.log(maxQ);
 
             return {
+                feedback:[],
                 df: json,
                 maxQ: maxQ,
                 q_n: n_questions,
@@ -179,11 +180,14 @@
                 return titles;
             },
             q_feedback: function () {
-                let feedback = null;
+                let feedback = [];
                 for (let key in json.feedback_text) {
                     if (this.q_id.includes(key))
-                        feedback = json.feedback_text[key];
+                        feedback.push(json.feedback_text[key]);
                 }
+                feedback = feedback.filter((value, index) => feedback.indexOf(value) === index);
+                feedback = feedback.concat(this.feedback);
+                console.log("feedback:" + feedback);
                 return feedback;
             },
             correct_answer: function(){

@@ -12,6 +12,7 @@
                 <div v-if="answers[index].trim() === a.trim()">Correct!</div>
 <!--                <div v-if="answers[index] != a" class="col">The correct answer is <strong>{{answers[index]}}</strong></div>-->
                 <div v-if="answers[index].trim() !== a.trim()" class="col">The correct answer should be {{answers[index]}}</div>
+                <div class="col">{{feedback[index]}}</div>
             </div>
         </div>
     </div>
@@ -23,7 +24,7 @@
         props: {
             studentAnswers: Array,
             answers: Array,
-            feedback: String,
+            feedback: Array,
 
         },
         data: function () {
