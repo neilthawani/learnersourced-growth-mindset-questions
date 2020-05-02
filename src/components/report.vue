@@ -3,12 +3,15 @@
         <div class="my-3" v-for="(a,index) in studentAnswers" :key="a.id">
             <div class="mt-5 row justify-content-center">
                 <div class="col-2 font-weight-bold">Question {{index+1}}</div>
+                <div class="col-10"></div>
             </div>
             <div class="my-3 row justify-content-center">
-                <div class="col">You answered {{a}}</div>
+                <div class="col">You answered <strong>{{a}}</strong></div>
             </div>
             <div class="row justify-content-center my-2">
-                <div class="col">The correct answer is <strong>{{answers[index]}}</strong></div>
+                <div v-if="answers[index].trim() === a.trim()">Correct!</div>
+<!--                <div v-if="answers[index] != a" class="col">The correct answer is <strong>{{answers[index]}}</strong></div>-->
+                <div v-if="answers[index].trim() !== a.trim()" class="col">The correct answer should be {{answers[index]}}</div>
             </div>
         </div>
     </div>
@@ -33,8 +36,10 @@
             q_title: function () {
                 return ("Question " + this.qNum);
             }
-        }
+        },
+        methods:{
 
+        }
     }
 </script>
 

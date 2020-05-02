@@ -14,7 +14,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + a" value="A">
+                        <input class="form-check-input" type="radio" :name="title" id="checkA" value="A">
                         <label class="form-check-label" :for="title + a">
                             A. {{a}}
                         </label>
@@ -24,7 +24,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + b" value="B">
+                        <input class="form-check-input" type="radio" :name="title" id="checkB" value="B">
                         <label class="form-check-label" :for="title + b">
                             B. {{b}}
                         </label>
@@ -34,7 +34,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + c" value="C">
+                        <input class="form-check-input" type="radio" :name="title" id="checkC" value="C">
                         <label class="form-check-label" :for="title + c">
                             C. {{c}}
                         </label>
@@ -44,7 +44,7 @@
             <div class="row justify-content-center">
                 <div class="col-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" :name="title" :id="title + d" value="D">
+                        <input class="form-check-input" type="radio" :name="title" id="checkD" value="D">
                         <label class="form-check-label" :for="title + d">
                             D. {{d}}
                         </label>

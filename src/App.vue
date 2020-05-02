@@ -42,6 +42,7 @@
             this.assignAnswers();
         },
         updated(){
+            console.log("updated()");
           this.assignAnswers();
         },
         methods: {
@@ -53,6 +54,7 @@
                     this.saveAnswer();
                     this.assignAnswers();
                     this.q_n++;
+                    $("#check"+ this.studentAnswers[this.q_n - 1]).prop("checked", true);
                 }
 
 
@@ -61,16 +63,17 @@
                 if (this.q_n > 1) {
                     this.saveAnswer();
                     this.q_n--;
+                    $("#check"+ this.studentAnswers[this.q_n - 1]).prop("checked", true);
                 }
             },
             saveAnswer() {
                 // save student answers
                 let ans = $('input:checked').val();
                 let ansText = $('input:checked+label').html();
-                console.log(ansText);
+                // console.log(ansText);
                 this.studentAnswers[this.q_n - 1] = ans;
                 this.studentAnswerText[this.q_n - 1] = ansText;
-                console.log("student Answer for question number " + this.q_n + ": " + this.studentAnswers[this.q_n - 1]);
+                console.log("student Answer for question number " + this.q_n + ": " + this.studentAnswerText[this.q_n - 1]);
                 $("input").prop("checked", false);
 
             },
@@ -89,7 +92,7 @@
                 if(this.q_answers[this.q_n-1] == null){
                     this.q_answers.push(this.q_answer);
                 }
-                console.log(this.q_answers);
+                // console.log(this.q_answers);
             }
         },
         data() {
@@ -98,7 +101,7 @@
                 return json.Question_id[key];
             });
             var maxQ = Math.max.apply(null, arr);
-            console.log(maxQ);
+            // console.log(maxQ);
 
             return {
                 df: json,
@@ -148,11 +151,11 @@
                                 correct = json.Answer_text[key];
                         }
                     }
-                    console.log(correct);
+                    // console.log(correct);
                     return(ans.slice(0,4).includes(correct));
                 }
                 let tf = isCorrectAnsIn(answers);
-                console.log(tf);
+                // console.log(tf);
                 while(!tf){
                     shuffle(answers);
                     tf= isCorrectAnsIn(answers);
