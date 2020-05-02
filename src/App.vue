@@ -182,11 +182,12 @@
             q_feedback: function () {
                 let feedback = [];
                 for (let key in json.feedback_text) {
-                    if (this.q_id.includes(key))
+                    // if (this.q_id.includes(key))
                         feedback.push(json.feedback_text[key]);
                 }
-                feedback = feedback.filter((value, index) => feedback.indexOf(value) === index);
-                feedback = feedback.concat(this.feedback);
+                let fSet = new Set(feedback);
+                feedback = [...fSet];
+
                 console.log("feedback:" + feedback);
                 return feedback;
             },

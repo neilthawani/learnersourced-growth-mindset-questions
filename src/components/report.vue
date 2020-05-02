@@ -12,6 +12,9 @@
                 <div v-if="answers[index].trim() === a.trim()">Correct!</div>
 <!--                <div v-if="answers[index] != a" class="col">The correct answer is <strong>{{answers[index]}}</strong></div>-->
                 <div v-if="answers[index].trim() !== a.trim()" class="col">The correct answer should be {{answers[index]}}</div>
+
+            </div>
+            <div class="row">
                 <div class="col">{{feedback[index]}}</div>
             </div>
         </div>
