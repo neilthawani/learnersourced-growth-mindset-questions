@@ -87,6 +87,8 @@
                 this.q_n = 1;
                 this.isQuizSubmitted = false;
                 // look at the answer array and randomize it
+                this.studentAnswers=[];
+                this.studentAnswerText=[];
             },
             assignAnswers(){
                 if(this.q_answers[this.q_n-1] == null){
