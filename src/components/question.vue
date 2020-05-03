@@ -1,6 +1,6 @@
 <template>
     <div class="question">
-        <div id="question" class="form-group my-4">
+        <div id="question" class="form-group p-3 my-4">
             <div class="row justify-content-center my-1">
                 <div class="col-10">
                     <strong>{{title}}</strong>
@@ -89,5 +89,9 @@
 </script>
 
 <style scoped>
-
+ #question{
+     background-color: rgba(126, 176, 219, 0.50);
+     border-radius: 10px;
+     box-shadow: 10px 10px;
+ }
 </style>

@@ -12,7 +12,7 @@
                 <report :student-answers="studentAnswerText" :answers="correct_answer" :feedback="q_feedback"></report>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row mb-3 justify-content-center">
             <div class="col-3  btn btn-warning" v-if="q_n!=1 && !isQuizSubmitted" @click="lastQuestion">Last Question
             </div>
             <div class="offset-1 col-3 btn btn-primary" v-if="q_n<maxQ && !isQuizSubmitted" @click="nextQuestion">
