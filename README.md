@@ -1,6 +1,13 @@
 # tol_project3
 
-## Project setup
+## To see the demo website
+go to https://itsHenryChang.github.io/TOL_project3_frontend/
+
+## Jupiter Notebooks
+### Code for Generating Questions
+### Reflection Write-up
+
+## Project setup Local
 ```
 yarn install
 ```
