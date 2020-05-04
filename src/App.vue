@@ -12,6 +12,7 @@
                 <report :student-answers="studentAnswerText" :answers="correct_answer" :feedback="q_feedback"></report>
             </div>
         </div>
+        <div class="row mb-3 justify-content-center"><div class="col text-center text-danger" v-if="!isAnswered">Please pick an answer before continuing.</div></div>
         <div class="row mb-3 justify-content-center">
             <div class="col-3  btn btn-warning" v-if="q_n!=1 && !isQuizSubmitted" @click="lastQuestion">Last Question
             </div>
@@ -51,10 +52,15 @@
             },
             nextQuestion() {
                 if (this.q_n < this.maxQ) {
-                    this.saveAnswer();
-                    this.assignAnswers();
-                    this.q_n++;
-                    $("#check"+ this.studentAnswers[this.q_n - 1]).prop("checked", true);
+                    let ans = this.saveAnswer();
+                    if(ans != null){
+                        this.assignAnswers();
+                        this.q_n++;
+                        $("#check"+ this.studentAnswers[this.q_n - 1]).prop("checked", true);
+                        this.isAnswered = true;
+                    }else{
+                        this.isAnswered = false;
+                    }
                 }
 
 
@@ -75,6 +81,7 @@
                 this.studentAnswerText[this.q_n - 1] = ansText;
                 console.log("student Answer for question number " + this.q_n + ": " + this.studentAnswerText[this.q_n - 1]);
                 $("input").prop("checked", false);
+                return ansText;
 
             },
             submitQuiz() {
@@ -115,6 +122,7 @@
                 studentAnswers: [],
                 studentAnswerText: [],
                 isQuizSubmitted: false,
+                isAnswered: true,
             };
         },
         computed: {
